@@ -1,7 +1,7 @@
 services:
   - type: web
     name: datahub-mcp-server
-    env: node
+    runtime: node
     plan: free
     buildCommand: npm install && npm run build
     startCommand: npm start

@@ -46,10 +46,21 @@ Fill in the following settings:
 - **Branch**: `main` (or your default branch)
 - **Root Directory**: Leave empty (unless your code is in a subdirectory)
 
-**Build & Deploy:**
-- **Runtime**: `Node`
-- **Build Command**: `npm install && npm run build`
-- **Start Command**: `npm start`
+**Important:** Render auto-detects Node.js from your `package.json`. If you don't see build command fields:
+
+1. **Look for "Build Command" and "Start Command" fields** - they might be:
+   - In an "Advanced" section (click to expand)
+   - Under a "Commands" section
+   - Below the basic settings (scroll down)
+
+2. **If you see them**, enter:
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+
+3. **If you DON'T see them**, Render may be using your `package.json` scripts automatically:
+   - It will run `npm install` and `npm run build` automatically
+   - It will use the `start` script from your `package.json`
+   - This is fine! Just proceed to the next step.
 
 **Plan:**
 - Select **"Free"** for testing (or choose a paid plan for production)
