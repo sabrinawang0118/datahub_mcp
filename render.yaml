@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: datahub-mcp-server
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATAHUB_GMS_URL
+        sync: false
+      - key: DATAHUB_GMS_TOKEN
+        sync: false
+      - key: PORT
+        value: 10000
+    healthCheckPath: /health
